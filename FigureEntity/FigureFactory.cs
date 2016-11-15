@@ -2,7 +2,7 @@
 {
     static class FigureFactory
     {
-        public static AbstactFigure Get(string id)
+        public static AFigure Get(string id)
         {
             switch (id)
             {

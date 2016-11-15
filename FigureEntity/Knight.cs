@@ -2,9 +2,9 @@
 
 namespace Chess.FigureEntity
 {
-    class Knight : AbstactFigure, IFigure
+    class Knight : AFigure, IFigure
     {
-        public override Stack<Position> Alghoritm(Position start, Position end, int fieldSize)
+        public override Stack<Position> GetPath(Position start, Position end, int fieldSize)
         {
             Position currentPosition = start;
             Stack<Position> resoultWay = new Stack<Position>();
@@ -78,7 +78,7 @@ namespace Chess.FigureEntity
                         true;
         }
 
-        public override void AddMoveTemplates()
+        protected override void AddMoveTemplates()
         {
             MoveTemplates.Add(new Position(-1, -2));
             MoveTemplates.Add(new Position(1, -2));

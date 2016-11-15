@@ -4,6 +4,13 @@ using System.Collections.Generic;
 
 namespace Chess
 {
+    //internal enum FigureType
+    //{
+    //    КОНЬ,
+    //    СЛОН,
+    //    КОРОЛЕВА
+    //}
+
     class Program
     {
         static void Main()

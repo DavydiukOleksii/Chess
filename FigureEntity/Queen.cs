@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Chess.FigureEntity
 {
-    class Queen : AbstactFigure, IFigure
+    class Queen : AFigure, IFigure
     {
-        public override Stack<Position> Alghoritm(Position start, Position end, int fieldSize)
+        public override Stack<Position> GetPath(Position start, Position end, int fieldSize)
         {
             Position currentPosition = start;
             Stack<Position> tmpWay = new Stack<Position>();
@@ -56,7 +56,7 @@ namespace Chess.FigureEntity
             return resoultWay;
         }
 
-        public override void AddMoveTemplates()
+        protected override void AddMoveTemplates()
         {
             MoveTemplates.Add(new Position(-1, -1));
             MoveTemplates.Add(new Position(0, -1));

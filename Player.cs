@@ -48,7 +48,7 @@ namespace Chess
         //Methods for finding the way to final position from start
         public Stack<Position> MoveFigureToFinalPosition()
         {
-            Stack<Position> resoultWay = _figure.Alghoritm(_field.CurrentFigurePositions[_figure.FigureType], _finalPositions, _field.SizeOfField);
+            Stack<Position> resoultWay = _figure.GetPath(_field.CurrentFigurePositions[_figure.FigureType], _finalPositions, _field.SizeOfField);
             foreach (Position posit in resoultWay)
             {
                 MoveFigure(_figure, posit);

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Chess.FigureEntity
 {
-    class Bishop : AbstactFigure, IFigure
+    class Bishop : AFigure, IFigure
     {
-        public override Stack<Position> Alghoritm(Position start, Position end, int fieldSize)
+        public override Stack<Position> GetPath(Position start, Position end, int fieldSize)
         {
             Position currentPosition = start;
             Stack<Position> resoultWay = new Stack<Position>();
@@ -51,13 +51,18 @@ namespace Chess.FigureEntity
             return resoultWay;
         }
 
-        public override void AddMoveTemplates()
+        protected override void AddMoveTemplates()
         {
             MoveTemplates.Add(new Position(-1, -1));
             MoveTemplates.Add(new Position(1, -1));
 
             MoveTemplates.Add(new Position(-1, 1));
             MoveTemplates.Add(new Position(1, 1));
+        }
+
+        protected static bool CanFindTheWay(Position curent, Position final)
+        {
+            return (curent.X + curent.Y) % 2 == (final.X + final.Y) % 2;
         }
 
         public Bishop()
